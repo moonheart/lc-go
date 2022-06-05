@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 type TreeNode struct {
@@ -17,15 +18,12 @@ func binaryTreePaths(root *TreeNode) []string {
 }
 
 func dfs(node *TreeNode, path string, arr *[]string) {
-	if len(path) == 0 {
-		path = fmt.Sprintf("%d", node.Val)
-	} else {
-		path = fmt.Sprintf("%s->%d", path, node.Val)
-	}
 	if node.Left == nil && node.Right == nil {
+		path += strconv.Itoa(node.Val)
 		*arr = append(*arr, path)
 		return
 	}
+	path += strconv.Itoa(node.Val) + "->"
 	if node.Left != nil {
 		dfs(node.Left, path, arr)
 	}
