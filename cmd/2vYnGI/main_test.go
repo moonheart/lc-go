@@ -18,7 +18,7 @@ func Test_breakfastNumber(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := breakfastNumber(tt.args.staple, tt.args.drinks, tt.args.x); got != tt.want {
+			if got := breakfastNumber2(tt.args.staple, tt.args.drinks, tt.args.x); got != tt.want {
 				t.Errorf("breakfastNumber() = %v, want %v", got, tt.want)
 			}
 		})
