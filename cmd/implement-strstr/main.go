@@ -20,3 +20,15 @@ func strStr(haystack string, needle string) int {
 	}
 	return -1
 }
+func strStr2(haystack string, needle string) int {
+outer:
+	for i := 0; i+len(needle) <= len(haystack); i++ {
+		for j := 0; j < len(needle); j++ {
+			if haystack[i+j] != needle[j] {
+				continue outer
+			}
+		}
+		return i
+	}
+	return -1
+}
