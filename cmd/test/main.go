@@ -1,13 +1,9 @@
 package main
 
+import "fmt"
+
 func main() {
-	arr := []int{1, 2, 3, 4, 5}
-	for i := 0; i < len(arr); i++ {
-		if i == 3 {
-			arr = append(arr, 6)
-		}
-		println(arr[i])
-	}
+	fmt.Printf("%b", 0b00010001000100010001000100010001&0b10000)
 }
 
 func t() {
